@@ -1,0 +1,768 @@
+body {
+    background: #464E5A;
+    font-family: sans-serif;
+    color: white;
+    font-size: 14px;
+}
+
+#moviee {
+    display: none;
+}
+
+.top {
+    background: black;
+}
+
+.header {
+    background: black;
+    padding: 5px;
+}
+
+.heading {
+    margin: 10px 0px 4px 0px;
+    text-align: center;
+    padding: .9em 1em;
+}
+
+.heading h3 {
+    font-weight: bolder;
+}
+
+.navv {
+    font-size: 13px;
+    margin: 10px 0px 4px 0px;
+    width: 100%;
+    border-radius: 20px 0px 20px 0px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    background: url(../images/movies.png);
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 1.5s ease;
+}
+
+.navv li {
+    margin-left: 4px;
+    text-align: center;
+}
+
+.navv li a {
+    color: white;
+    font-weight: bolder;
+}
+
+.navv li a:hover {
+    background: black;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px white, 0px 0px 5px blue;
+}
+
+.iconn {
+    background: url(../images/tt.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+button:focus {
+    outline: none;
+}
+
+.menu-customize {
+    padding: 4px;
+    text-align: center;
+    background: black
+}
+
+.navbar-sign a {
+    color: white;
+    font-weight: bolder;
+    font-size: 13px;
+    padding: 1.7em 1em;
+}
+
+.navbar-sign a:hover {
+    text-decoration: underline;
+}
+
+
+/* Carousel */
+
+.carousels {
+    background: black;
+}
+
+.carousell {
+    background: black;
+    width: 100%;
+    height: 550px;
+    padding: 0px;
+    margin-bottom: 12px;
+    transition: all 1s ease;
+}
+
+.customization-card {
+    width: 100%;
+    padding: 0px;
+    border-radius: 0px;
+    height: 550px;
+    cursor: pointer;
+    background: linear-gradient(to left, black, black);
+}
+
+.customization-card h4 {
+    font-weight: bolder;
+    font-size: 18px;
+    color: black;
+    background: gray;
+}
+
+.customization-card p {
+    color: white;
+    font-size: 13px;
+    margin-top: 25px;
+}
+
+.customization-card button:hover {
+    background: linear-gradient(to left, red, orangered);
+    color: white;
+}
+
+.imgg {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    padding: 0px;
+}
+
+.imgg img {
+    width: 100%;
+    height: 400px;
+    transition: all 1.5s ease;
+}
+
+.imgg:hover img {
+    transform: scale(1.1);
+}
+
+.iconni {
+    background: linear-gradient(to left, red, black);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 250px auto;
+}
+
+.iconni:hover {
+    background: linear-gradient(to left, black, red);
+}
+
+.carousell a:hover {
+    text-decoration: none;
+}
+
+
+/* Quiz */
+
+.qna {
+    background: black;
+    margin-top: 5px;
+}
+
+.quiz-container h5 {
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+    padding: 2px;
+    margin: 20px 0px 5px 0px;
+}
+
+.quiz-container h6,
+p {
+    color: white;
+    padding: 5px;
+    font-weight: bolder;
+}
+
+#quiz1,
+#quiz2,
+#quiz3,
+#quiz4 {
+    width: 15px;
+    height: 15px;
+}
+
+.quiz-container label {
+    color: white;
+    font-size: 15px;
+    margin-left: 4px;
+}
+
+.quiz-container button {
+    background: linear-gradient(to left, orangered, red);
+    margin: 6px 0px 4px 0px;
+    color: white;
+}
+
+.horizontal-line {
+    width: 100%;
+    height: 5px;
+    background: black;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+/* footer */
+
+.footer {
+    background: black;
+}
+
+.footer-logo img {
+    height: 50px;
+    width: 80%;
+    margin: 10px;
+}
+
+.socialmedias {
+    float: right;
+    padding: 10px 0 0;
+    overflow: hidden;
+    height: 70px;
+    width: 80%;
+}
+
+span {
+    display: inline-block;
+    color: white;
+}
+
+.circle {
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    display: inline-block;
+    padding-top: 2px;
+    margin-left: 5px;
+    transition: all 1.5s ease;
+}
+
+.circle:hover {
+    transform: scale(1.3);
+}
+
+i {
+    color: black;
+}
+
+.facebook:hover,
+.twitter:hover,
+.youtube:hover,
+.pintrest:hover,
+.instagram:hover {
+    background: white;
+}
+
+.facebook:hover i {
+    color: slateblue;
+    transition: color 1.5s;
+}
+
+.youtube:hover i,
+.pintrest:hover i {
+    color: red;
+    transition: color 1.5s;
+}
+
+.twitter:hover i {
+    color: rgb(23, 149, 199);
+    transition: color 1.5s;
+}
+
+.instagram:hover i {
+    color: palevioletred;
+    transition: color 1.5s;
+}
+
+.second-row {
+    margin-top: 15px;
+}
+
+.navs h5 {
+    font-size: 13px;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    margin-left: 13px;
+    font-weight: bolder;
+}
+
+.navs nav li {
+    line-height: 6px;
+}
+
+.navs nav li a {
+    color: white;
+    font-size: 9px;
+}
+
+.navs nav li:hover a {
+    color: maroon;
+    font-weight: bold;
+}
+
+.textt h4 {
+    color: white;
+    font-weight: bolder;
+    font-size: 18px;
+    margin-bottom: 15px;
+    vertical-align: top;
+}
+
+.download {
+    width: 80px;
+    height: 30px;
+    margin-top: 4px;
+}
+
+.download img {
+    width: 80px;
+    height: 30px;
+}
+
+.linee {
+    background: black;
+    font-weight: bolder;
+}
+
+.linee h6 {
+    color: white;
+    font-size: 14px;
+    margin-top: 3px;
+    font-weight: bolder;
+}
+
+.last {
+    width: 100%;
+    height: 5px;
+    background: white;
+}
+
+
+/* login */
+
+.login-background {
+    background: black;
+    margin-top: 15px;
+    padding: 10px;
+}
+
+.login-form {
+    background: black;
+    padding: 20px;
+    height: 400px;
+    padding-top: 65px;
+}
+
+.login-form label,
+h4 {
+    color: white;
+    font-weight: bolder;
+    font-size: 15px;
+}
+
+.login-form h4 {
+    color: black;
+    font-size: 20px;
+    margin-bottom: 10px;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+}
+
+.log-icon {
+    width: 40px;
+    text-align: center;
+    background: white;
+}
+
+.email i {
+    color: red;
+}
+
+.password i {
+    color: blue;
+}
+
+.btn-login {
+    background: linear-gradient(to left, orangered, red);
+    color: white;
+    font-weight: bolder;
+    margin: 5px 0px 10px 0px;
+}
+
+.btn-login:hover {
+    color: white;
+    background: linear-gradient(to right, orangered, red);
+}
+
+.backgroundd {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    background: black;
+}
+
+.backgroundd img {
+    width: 100%;
+    height: 400px;
+}
+
+.vertical-line {
+    background: white;
+    width: 1px;
+    height: 400px;
+}
+
+
+/* movie*/
+
+.movie-background {
+    background: black;
+    padding: 5px;
+}
+
+.movie-background h4 {
+    font-size: 18px;
+    padding: 7px;
+    background: #011132;
+}
+
+.img-movie {
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    padding: 0px;
+}
+
+.img-movie img {
+    width: 100%;
+    height: 450px;
+    transition: all 1.5s ease;
+}
+
+.img-movie:hover img,
+.img-about:hover img {
+    transform: scale(1.1);
+}
+
+
+/* modal */
+
+.modall {
+    background: black;
+    margin: 200px auto 0px auto;
+}
+
+.modall h4 {
+    font-size: 20px;
+}
+
+.btn-registerr {
+    background: linear-gradient(to left, red, blue);
+    color: white;
+}
+
+.btn-registerr:hover {
+    color: white;
+    background: linear-gradient(to right, red, blue);
+}
+
+.modal-backdrop.show {
+    opacity: 0.9;
+}
+
+
+/* register form */
+
+.register-form {
+    background: black;
+    padding: 5px;
+}
+
+.formm {
+    padding: 4px;
+    color: white;
+}
+
+.formm label {
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+.formm .icon-register {
+    width: 40px;
+    text-align: center;
+    background: white;
+}
+
+.formm h5 {
+    font-weight: bolder;
+    padding-bottom: 12px;
+    border-radius: 5px;
+    background: gray;
+    padding-top: 4px;
+}
+
+.checkr {
+    margin: 5px auto 5px auto;
+}
+
+.formm button {
+    background: linear-gradient(to left, orangered, red);
+    outline: none;
+    color: white;
+    font-weight: bolder;
+    margin: 5px auto;
+}
+
+.functionality {
+    height: 30px;
+    width: 100%;
+    background: red;
+    position: relative;
+    z-index: 2;
+    margin-top: -30px;
+}
+
+.circular {
+    height: 15px;
+    width: 15px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 50%;
+    background: white;
+    position: relative;
+    top: 3px;
+    padding-top: 3px;
+}
+
+.functionality a {
+    text-decoration: none;
+    font-size: 12px;
+    display: inline-block;
+    background: none;
+    margin-left: 15px;
+    margin-top: 5px;
+    color: white;
+    font-weight: bolder;
+}
+
+.functionality a:hover {
+    color: black;
+}
+
+.title {
+    margin-top: 10px;
+    margin-left: 5px;
+    font-size: 16px;
+    color: gray;
+}
+
+
+/* Single movie */
+
+.movie-Solo {
+    background: black;
+    padding: 5px;
+    margin: 10px auto;
+}
+
+.Solo {
+    width: 100%;
+    height: 400px;
+    background: red;
+    padding: 0px;
+    margin-top:7px;
+    /* border-radius: 40px 0px 40px 0px; */
+}
+
+.Solo img {
+    width: 100%;
+    height: 400px;
+    /* border-radius: 40px 0px 40px 0px; */
+}
+
+.movie-file {
+    background: black;
+    margin-top: 5px;
+}
+
+.heading-movie {
+    padding: 14px;
+}
+
+.heading-movie h4 {
+    font-weight: bold;
+    font-size: 20px;
+    word-spacing: 3px;
+}
+
+.heading-movie p {
+    text-align: justify;
+    font-weight: 100;
+}
+
+.img-info {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    padding: 0px;
+    border: 1px solid white;
+}
+
+.img-info img {
+    width: 100%;
+    height: 200px;
+}
+
+.aa {
+    font-size: 12px;
+}
+
+.about-us {
+    background: black;
+    padding: 5px;
+}
+
+.heading-cover {
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.heading-cover h2 {
+    font-size: 22px;
+    font-weight: bolder;
+    color: #ab963a;
+}
+
+.img-about {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    padding: 0px;
+}
+
+.img-about img {
+    width: 100%;
+    height: 400px;
+    transition: all 1.5s ease;
+}
+
+.topic {
+    width: 100%;
+    height: 30px;
+    position: relative;
+    z-index: 2;
+    margin-top: -30px;
+    background: rgba(255, 69, 0, 0.8);
+}
+
+.topic h4 {
+    color: black;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bolder;
+    padding-top: 5px;
+}
+
+.about-us a:hover {
+    text-decoration: none;
+}
+
+.abcd {
+    padding: 25px;
+
+}
+
+.abcd h4 {
+    background: white;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    padding: .2em 1em;
+}
+
+.abcd p {
+    font-weight: 300;
+}
+.contentt {
+    border-radius: 20px 0px 20px 0px;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.4), rgba(0, 0, 255, 0.4)), url(../images/back.jpg);
+}
+
+.modal-title {
+    font-weight: bolder;
+}
+
+.modal-title span {
+    color: black;
+}
+
+.pricetag {
+    font-size: 12px;
+    font-weight: 100;
+}
+
+
+.ticketss {
+    color: white;
+    background: #01113266;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.ticketss h5 {
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+.bought {
+    background: rgba(255, 255, 255, 0.4);
+    margin-top: 20px;
+    padding: 5px;
+}
+
+.bought a {
+    color: white;
+    font-size: 20px;
+    font-weight: 100;
+    padding: 4px;
+}
+
+.bought a:hover {
+    text-decoration: none;
+}
+
+.arrow {
+    float: right;
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    padding-top: 1px;
+}
+
+.arrow i {
+    color: darkblue;
+    font-size: 30px;
+}
+
+.down {
+    display: none;
+}

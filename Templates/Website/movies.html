@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="container movie-background">
+    <div class="row">
+        <div class="col-md-12 col-12">
+            <h4 class="text-center"> Now Showing </h4>
+        </div>
+         {% for movie in Movie   %}
+        <div class="col-md-4 col-12">
+
+            <div class="img-movie">
+                <img src="http://127.0.0.1:8000/media/{{movie.image}}" alt="movie" class="d-block img-thumbnail">
+            </div>
+
+            <div class="functionality">
+                <a href="/Movie/{{movie.id}}"> <span class="circular">  </span> Buy Ticket </a>
+                <a href="#"> <span class="circular">  </span> Watch trailer </a>
+            </div>
+            <h5 class="title"> {{movie.movie_name}} </h5>
+
+
+
+        </div>
+        {% endfor %}
+
+
+<!--        <div class="col-md-4 col-12">-->
+
+<!--            <div class="img-movie">-->
+<!--                <img src="{% static 'images/weathering.jpg' %}" alt="movie" class="d-block img-thumbnail">-->
+<!--            </div>-->
+
+<!--            <div class="functionality">-->
+<!--                <a href="#"> <span class="circular">  </span> Buy Ticket </a>-->
+<!--                <a href="#"> <span class="circular">  </span> Watch trailer </a>-->
+<!--            </div>-->
+<!--            <h5 class="title"> Weathering with you </h5>-->
+
+
+<!--        </div>-->
+
+<!--        <div class="col-md-4 col-12">-->
+<!--            <div class="img-movie">-->
+<!--                <img src="{% static 'images/silent.jpg' %}" alt="movie" class="d-block img-thumbnail">-->
+<!--            </div>-->
+
+<!--            <div class="functionality">-->
+<!--                <a href="#"> <span class="circular">  </span> Buy Ticket </a>-->
+<!--                <a href="#"> <span class="circular">  </span> Watch trailer </a>-->
+<!--            </div>-->
+<!--            <h5 class="title"> A silent voice </h5>-->
+
+<!--        </div>-->
+
+<!--        <div class="col-md-4 col-12">-->
+<!--            <div class="img-movie">-->
+<!--                <img src="{% static 'images/wolf.jpg' %}" alt="movie" class="d-block img-thumbnail">-->
+<!--            </div>-->
+
+<!--            <div class="functionality">-->
+<!--                <a href="#"> <span class="circular">  </span> Buy Ticket </a>-->
+<!--                <a href="#"> <span class="circular">  </span> Watch trailer </a>-->
+<!--            </div>-->
+<!--            <h5 class="title"> Wolf Children </h5>-->
+
+<!--        </div>-->
+
+<!--        <div class="col-md-4 col-12">-->
+<!--            <div class="img-movie">-->
+<!--                <img src="{% static 'images/spirited.jpg' %}" alt="movie" class="d-block img-thumbnail">-->
+<!--            </div>-->
+
+<!--            <div class="functionality">-->
+<!--                <a href="/Movie/single"> <span class="circular">  </span> Buy Ticket </a>-->
+<!--                <a href="#"> <span class="circular">  </span> Watch trailer </a>-->
+<!--            </div>-->
+<!--            <h5 class="title"> Spirited Away </h5>-->
+<!--        </div>-->
+
+<!--        <div class="col-md-4 col-12">-->
+<!--            <div class="img-movie">-->
+<!--                <img src="{% static 'images/want.jpg' %}" alt="movie" class="d-block img-thumbnail">-->
+
+<!--            </div>-->
+
+<!--            <div class="functionality">-->
+<!--                <a href="#"> <span class="circular">  </span> Buy Ticket </a>-->
+<!--                <a href="#"> <span class="circular">  </span> Watch trailer </a>-->
+<!--            </div>-->
+<!--            <h5 class="title"> I want to eat your pancreas </h5>-->
+<!--        </div>-->
+    </div>
+</div>
+{% endblock %}

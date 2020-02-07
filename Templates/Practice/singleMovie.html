@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+{% load static  %}
+
+{% block content  %}
+
+
+
+<div class="container movie-Solo">
+
+    <ul>
+    <li>{{ Product.movie_name }}</li>
+    <li>{{ Product.user }}</li>
+    </ul>
+
+
+    <div class="row">
+        <div class="col-md-1 d-none d-md-block"></div>
+
+        <div class="col-md-2 col-6">
+            <div class="img-info">
+                <img src="{% static 'images/voice.jpg' %}" alt="img" class="d-block">
+            </div>
+        </div>
+        <div class="col-md-5 col-12">
+            <div class="heading-movie">
+                <h4> {{ Product.product }} <span class="pricetag"> 2D:Rs.300 | 3D:Rs.480 </span> </h4>
+                <p> Bruno have many struggles in his life. The demon name Niang appears in every new wave to finish his
+                    village. His parents was killed by Niang. So his only goal in his life is to get more powerful to
+                    kill Niang. For this..... </p>
+                <div class="buttons">
+                    <button class="btn btn-outline-primary" data-target="#bookform" data-toggle="modal" type="button" name="button"
+                            value="button">Book
+                    </button>
+                    <a href="#" class="btn btn-outline-primary" type="button" name="button" value="button">Watch
+                        Trailer</a>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="col-md-4 d-none d-md-block">
+
+        </div>
+
+
+        <div class="col-md-12">
+            <div class="wrapper owl-carousel owl-theme">
+                <div class="Solo">
+                    <img src="{% static 'images/silent.jpg' %}" alt="movie" class="d-block">
+                </div>
+
+                <div class="Solo">
+                    <img src="" alt="movie" class="d-block">
+                </div>
+
+                <div class="Solo">
+                    <img src="" alt="movie" class="d-block">
+                </div>
+
+                <div class="Solo">
+                    <img src="" alt="movie" class="d-block">
+                </div>
+
+                <div class="Solo">
+                    <img src="" alt="movie" class="d-block">
+                </div>
+
+                <div class="Solo">
+                    <img src="" alt="movie" class="d-block">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+        <div class="modal fade" id="bookform">
+            <div class="modal-dialog" role="dialog">
+                <div class="modal-content contentt">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Book Your Tickets</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">X</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="form-book">
+                                        <form method="POST" name="form-value">
+                                            <div class="form-group">
+                                                <label> Movie Name:  </label>
+                                                <div class="input-group">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text icon-register"> <i class="fas fa-film"></i>  </span>
+                                                    </div>
+                                                    <input type="text" id="movieName" name="movieName" class="form-control" readonly>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label> Type:  </label>
+                                                <div class="input-group">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text icon-register"><i class="fas fa-puzzle-piece"></i>  </span>
+                                                    </div>
+                                                    <select class="form-control" name="type" required>
+                                                       <option value="2d">  2D </option>
+                                                       <option value="3d">  3D </option>
+                                                   </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label> Number of tickets:  </label>
+                                                <div class="input-group">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text icon-register"> <i class="fas fa-flag"></i> </span>
+                                                    </div>
+                                                    <input type="number" id="no" name="no" class="form-control" required>
+                                                </div>
+                                            </div>
+
+
+
+
+
+
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 d-none d-md-block">
+
+                                </div>
+                                <div class="col-md-2 d-none d-md-block"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Exit</button>
+                        <button type="submit" value="submit" name="submit" class="btn btn-primary">Book</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+{% endblock  %}

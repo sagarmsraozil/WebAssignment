@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <div>
+
+        <input type="text" name="fn" placeholder="Firstname">
+    </div>
+
+    <div>
+
+        <input type="email" name="email" placeholder="email">
+    </div>
+
+    <div>
+
+        <input type="text" name="ln" placeholder="lastname">
+    </div>
+
+    <div>
+
+        <input type="password" name="pw" placeholder="password">
+    </div>
+
+    <div>
+
+        <input type="text" name="un" placeholder="Username">
+    </div>
+
+    <button class="btn btn-primary" type="submit"> Click </button>
+
+</form>
+{% endblock  %}

@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+        <div class="container about-us">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="heading-cover">
+                        <h2 class="text-center"> About Us </h2>
+                    </div>
+
+
+                </div>
+
+
+                <div class="col-md-4">
+                    <a data-toggle="collapse" data-target="#team">
+                        <div class="img-about">
+                            <img src="{% static 'images/team.jpg' %}" class="d-block img-thumbnail" alt="image">
+                        </div>
+                        <div class="topic">
+                            <h4> Our team </h4>
+                        </div>
+                    </a>
+
+
+                </div>
+
+
+                <div class="col-md-4">
+                    <a a data-toggle="collapse" data-target="#sponsor">
+                        <div class="img-about">
+                            <img src="{% static 'images/sponsors.jpg' %}" class="d-block img-thumbnail" alt="image">
+                        </div>
+                        <div class="topic">
+                            <h4> Sponsers </h4>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-4">
+                    <a a data-toggle="collapse" data-target="#aim">
+                        <div class="img-about">
+                            <img src="{% static 'images/aim.png' %}"class="d-block img-thumbnail" alt="image">
+                        </div>
+
+                        <div class="topic">
+                            <h4> Aim </h4>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-2">
+
+                </div>
+
+                <div class="col-md-8">
+                    {% for d in description  %}
+                    <div id="team" class="collapse abcd">
+                        <h4 class="text-center"> Our team </h4>
+                        <p class="text-justify"> {{d.our_team}} </p>
+                    </div>
+
+                    <div id="sponsor" class="collapse abcd">
+                        <h4 class="text-center"> Sponsers </h4>
+                        <p class="text-justify">{{d.sponsors}}
+                        </p>
+                    </div>
+
+                    <div id="aim" class="collapse abcd">
+                        <h4 class="text-center">Aim</h4>
+                        <p class="text-justify"> {{d.aim}}
+                        </p>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="col-md-2">
+
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+{% endblock %}

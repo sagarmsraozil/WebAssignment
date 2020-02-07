@@ -1,0 +1,183 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+
+{% block content %}
+
+
+
+<div class="container movie-Solo">
+
+    <div class="row">
+        <div class="col-md-1 d-none d-md-block"></div>
+
+        <div class="col-md-2 col-6">
+            <div class="img-info">
+                <img src="http://127.0.0.1:8000/media/{{Movie.title_img}}" alt="img" class="d-block">
+            </div>
+        </div>
+
+        <div class="col-md-5 col-12">
+            <div class="heading-movie">
+                <h4> {{Movie.product}} <span class="pricetag"> 2D:Rs.300 | 3D:Rs.480 </span> </h4>
+                <p> {{Movie.description}} </p>
+                <div class="buttons">
+                    <button class="btn btn-outline-primary" data-target="#bookform" data-toggle="modal" type="button" name="button"
+                            value="button">Book
+                    </button>
+                    <a href="#" class="btn btn-outline-primary" type="button" name="button" value="button">Watch
+                        Trailer</a>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="col-md-4 d-none d-md-block">
+
+        </div>
+
+
+        <div class="col-md-12">
+            <div class="wrapper owl-carousel owl-theme">
+                <div class="Solo">
+                    <img src="http://127.0.0.1:8000/media/{{Movie.img1}}" alt="movie" class="d-block">
+                </div>
+
+
+
+                <div class="Solo">
+                    <img src="http://127.0.0.1:8000/media/{{Movie.img2}}" alt="movie" class="d-block">
+                </div>
+
+                <div class="Solo">
+                    <img src="http://127.0.0.1:8000/media/{{Movie.img3}}" alt="movie" class="d-block">
+                </div>
+
+                <div class="Solo">
+                    <img src="http://127.0.0.1:8000/media/{{Movie.img4}}" alt="movie" class="d-block">
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+        <div class="modal fade" id="bookform">
+            <div class="modal-dialog" role="dialog">
+                <div class="modal-content contentt">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Book Your Tickets</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">X</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="form-book">
+                                        <form method="post" name="form-value">
+                                            {% csrf_token %}
+                                            <div class="form-group">
+                                                <label> Movie Name:  </label>
+                                                <div class="input-group">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text icon-register"> <i class="fas fa-film"></i>  </span>
+                                                    </div>
+                                                    <input type="text" id="movieName" value="{{Movie.product}}" name="movieName" class="form-control" readonly>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label> Type:  </label>
+                                                <div class="input-group">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text icon-register"><i class="fas fa-puzzle-piece"></i>  </span>
+                                                    </div>
+                                                    <select class="form-control" name="type" id="type" onchange="priceView()" required>
+                                                       <option value="2D">  2D </option>
+                                                       <option value="3D">  3D </option>
+                                                   </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label> Date:  </label>
+                                                <div class="input-group">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text icon-register"> <i class="fas fa-flag"></i> </span>
+                                                    </div>
+                                                    <input type="date" id="date" name="date" class="form-control" min="2020-02-13" max="2020-03-01" required>
+                                                </div>
+                                            </div>
+                                             <div class="form-group">
+                                                <label> Time:  </label>
+                                                <div class="input-group">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text icon-register"><i class="fas fa-puzzle-piece"></i>  </span>
+                                                    </div>
+                                                    <select class="form-control" name="time" required>
+                                                       <option value="7:30 AM"> 7:30 AM </option>
+                                                       <option value="10:15 AM"> 10:15 AM  </option>
+                                                        <option value="12:00 PM"> 12:00 PM  </option>
+                                                        <option value="3:15 PM"> 3:15 PM  </option>
+                                                        <option value="5:00 PM"> 5:00 PM  </option>
+                                                        <option value="9 PM">  9 PM </option>
+                                                   </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label> Number of tickets:  </label>
+                                                <div class="input-group">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text icon-register"> <i class="fas fa-flag"></i> </span>
+                                                    </div>
+                                                    <input type="number" id="no" name="no" class="form-control" oninput="priceView()" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label> Price:  </label>
+                                                <div class="input-group">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text icon-register"> <i class="fas fa-flag"></i> </span>
+                                                    </div>
+                                                    <input type="number"  class="form-control" name="price" value="0" id="price" readonly>
+                                                </div>
+                                            </div>
+
+
+                                        <button type="submit" value="submit" name="submit" class="btn btn-primary" onclick="alert('Do you really want to book?')">Book</button>
+
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="">Exit</button>
+
+
+
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 d-none d-md-block">
+
+                                </div>
+                                <div class="col-md-2 d-none d-md-block"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+{% endblock %}
+
+
+

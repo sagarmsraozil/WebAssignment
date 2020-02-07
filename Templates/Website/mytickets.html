@@ -1,0 +1,204 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content  %}
+
+<div class="container ticketss">
+    <div class="row">
+        <div class="col-md-12">
+            <h5 class="text-center"> My Tickets </h5>
+            <div class="bought">
+                <a href="#" class="abcd" onmouseover="mouseclick()" onmouseout="mous()" data-toggle="collapse"
+                   data-target="#ticketsbought">
+                    Bought Tickets
+                    <span class="arrow">  <i class="fas fa-caret-right right"></i> <i
+                            class="fas fa-caret-down down"></i> </span>
+                </a>
+
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="collapse" id="ticketsbought">
+
+                <table class="table">
+
+                    <thead class="thead-dark">
+                    <tr class="text-center">
+
+                        <th scope="col">Movie Name</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">No. of tickets</th>
+
+                        <th scope="col">Price</th>
+                        <th scope="col">Booked Date</th>
+                        <th scope="col">Booked For</th>
+                        <th scope="col">Time</th>
+                        <th scope="col">Update</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                    </thead>
+                    {% for tickets in ticket %}
+                    <tbody class="bg-dark text-white">
+                    <tr class="text-center">
+
+                        <td>{{tickets.movie_name}}</td>
+                        <td>{{tickets.type}}</td>
+                        <td>{{tickets.quantity}}</td>
+                        <td>{{tickets.price}}</td>
+                        <td>{{tickets.BookedDate}}</td>
+                        <td>{{tickets.ExpiryDate}}</td>
+                        <td>{{tickets.time}}</td>
+                        <td> <a href="/mytickets/update/{{tickets.id}}" class="btn btn-primary"  > Update  </a>   </td>
+                        <td> <a href="/mytickets/delete/{{tickets.id}}" class="btn btn-danger"> Delete  </a>   </td>
+                    </tr>
+
+                    </tbody>
+                    {% endfor %}
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="wrapper owl-carousel owl-theme">
+                <div class="Solo">
+                    <img src="{% static 'images/bsr.jpg' %}" alt="movie" class="d-block">
+                </div>
+
+
+                <div class="Solo">
+                    <img src="{% static 'images/big.png' %}" alt="movie" class="d-block">
+                </div>
+
+                <div class="Solo">
+                    <img src="{% static 'images/fcube.jpg' %}" alt="movie" class="d-block">
+                </div>
+
+                <div class="Solo">
+                    <img src="{% static 'images/qfx.jpg' %}" alt="movie" class="d-block">
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+   <div class="modal fade" id="updateForm">
+            <div class="modal-dialog" role="dialog">
+                <div class="modal-content contentt">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Book Your Tickets</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">X</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="form-book">
+                                        <form method="post" name="form-value">
+                                            {% csrf_token %}
+                                            <div class="form-group">
+                                                <label> Id:  </label>
+                                                <div class="input-group">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text icon-register"> <i class="fas fa-film"></i>  </span>
+                                                    </div>
+                                                    <input type="text" id="id" value="{{tickets.id}}" name="movieName" class="form-control" readonly>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label> Movie Name:  </label>
+                                                <div class="input-group">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text icon-register"> <i class="fas fa-film"></i>  </span>
+                                                    </div>
+                                                    <input type="text" id="movieName" value="" name="movieName" class="form-control" readonly>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label> Type:  </label>
+                                                <div class="input-group">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text icon-register"><i class="fas fa-puzzle-piece"></i>  </span>
+                                                    </div>
+                                                    <select class="form-control" name="type" id="type" onchange="priceView()" required>
+                                                       <option value="2D">  2D </option>
+                                                       <option value="3D">  3D </option>
+                                                   </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label> Date:  </label>
+                                                <div class="input-group">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text icon-register"> <i class="fas fa-flag"></i> </span>
+                                                    </div>
+                                                    <input type="date" id="date" name="date" class="form-control" min="2020-02-13" max="2020-03-01" required>
+                                                </div>
+                                            </div>
+                                             <div class="form-group">
+                                                <label> Time:  </label>
+                                                <div class="input-group">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text icon-register"><i class="fas fa-puzzle-piece"></i>  </span>
+                                                    </div>
+                                                    <select class="form-control" name="time" required>
+                                                       <option value="7:30 AM"> 7:30 AM </option>
+                                                       <option value="10:15 AM"> 10:15 AM  </option>
+                                                        <option value="12:00 PM"> 12:00 PM  </option>
+                                                        <option value="3:15 PM"> 3:15 PM  </option>
+                                                        <option value="5:00 PM"> 5:00 PM  </option>
+                                                        <option value="9 PM">  9 PM </option>
+                                                   </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label> Number of tickets:  </label>
+                                                <div class="input-group">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text icon-register"> <i class="fas fa-flag"></i> </span>
+                                                    </div>
+                                                    <input type="number" id="no" name="no" class="form-control" oninput="priceView()" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label> Price:  </label>
+                                                <div class="input-group">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text icon-register"> <i class="fas fa-flag"></i> </span>
+                                                    </div>
+                                                    <input type="number"  class="form-control" name="price" value="0" id="price" readonly>
+                                                </div>
+                                            </div>
+
+
+                                        <button type="submit" value="submit" name="submit" class="btn btn-primary" onclick="alert('Do you really want to book?')">Book</button>
+
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="">Exit</button>
+
+
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+   </div>
+
+{% endblock %}

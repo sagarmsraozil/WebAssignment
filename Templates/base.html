@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+{% load static  %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>4AM Movies</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap-4.3.1-dist/css/bootstrap.min.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap-4.3.1-dist/js/bootstrap.min.js' %}">
+    <script src="{%static 'bootstrap-4.3.1-dist/jquery.js'%}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'fontawesome-free-5.12.0-web/css/all.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'OwlCarousel2-2.3.4/dist/assets/owl.carousel.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'OwlCarousel2-2.3.4/dist/assets/owl.theme.default.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+<div class="top">
+    <div class="container header">
+        <div class="row">
+            <div class="col-md-3 col-12 heading">
+
+                <h3 id="loop"> 4AM MOVIES </h3>
+                <h3 id="moviee"> For Anime </h3>
+
+            </div>
+
+
+            <div class="col-md-6 col-6">
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="navv">
+                            <nav class="navbar navbar-expand-md">
+                                <a href="#" class="navbar-brand logo"> </a>
+                                <button class="navbar-toggler" data-toggle="collapse" data-target="#collapsible">
+                                    <span class="navbar-toggler-icon iconn"> </span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="collapsible">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item">
+                                            <a href="/Home" class="nav-link"> Home </a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a href="/Movie" class="nav-link"> Movies </a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a href="/mytickets" class="nav-link"> My Tickets </a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a href="/About" class="nav-link"> About Us </a>
+                                        </li>
+
+
+                                    </ul>
+                            </nav>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-3 col-6">
+                <div class="navbar-sign">
+                    <nav class="navbar navbar-expand">
+                        <ul class="navbar-nav">
+
+                            {% if user.is_authenticated %}
+                            {{ request.user }}
+                            <li class="nav-item">
+                                <a href="/Home/logout" class="nav-link"> Logout</a>
+                            </li>
+                            {% else %}
+                            <li class="nav-item">
+                                <a href="/Home/register" class="nav-link"> Sign Up </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="/Home/login" class="nav-link"> Login</a>
+                            </li>
+                            {% endif %}
+
+
+
+
+
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+{% block content %}
+
+{% endblock %}
+<div class="horizontal-line">
+
+</div>
+
+
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-6 heading">
+                        <!-- <div class="footer-logo">
+                            <a href="#"> <img src="images/an.png"> </a>
+                        </div> -->
+                        <h3> 4AM MOVIES </h3>
+
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="socialmedias">
+                            <span> Follow Us: </span>
+                            <a href="#" class="facebook circle"> <i class="fab fa-facebook"></i> </a>
+                            <a href="#" class="twitter circle"> <i class="fab fa-twitter-square"></i> </a>
+                            <a href="#" class="pintrest circle"> <i class="fab fa-pinterest"></i> </a>
+                            <a href="#" class="youtube circle"> <i class="fab fa-youtube"></i> </a>
+                            <a href="#" class="instagram circle"> <i class="fab fa-instagram"></i> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row second-row">
+            <div class="col-md-10">
+                <div class="row navs">
+                    <div class="col-md-4 col-6">
+                        <h5 class="text-white"> About Movies</h5>
+                        <p class="text-justify aa"> We provide only licensed movie tickets.
+                        </p>
+                    </div>
+                    <div class="col-md-2 col-6">
+                        <h5 class="text-white"> Get To Know Us </h5>
+                        <nav class="navbar">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link"> About US </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link"> My tickets </a>
+                                </li>
+
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="col-md-2 col-6">
+                        <h5 class="text-white"> Upcoming </h5>
+                        <nav class="navbar">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a href="" class="nav-link"> Netflix Collaboration </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="" class="nav-link"> Old movies list </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="" class="nav-link"> Online watching </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="" class="nav-link"> Downloading features </a>
+                                </li>
+
+
+                            </ul>
+                        </nav>
+
+                    </div>
+
+                    <div class="col-md-2 col-6">
+                        <h5 class="text-white"> Sponsored by</h5>
+                        <nav class="navbar">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link"> QFX </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link"> Big movies</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">Wai Wai</a>
+                                </li>
+
+
+                            </ul>
+                        </nav>
+
+                    </div>
+
+                    <div class="col-md-2 col-6">
+                        <h5 class="text-white"> Contact Us</h5>
+                        <nav class="navbar">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+
+                                    <a href="#" class="nav-link">Telephone</a>
+                                </li>
+
+                                <li class="nav-item">
+
+                                    <a href="#" class="nav-link">Reservation</a>
+                                </li>
+
+                                <li class="nav-item">
+
+                                    <a href="#" class="nav-link">Tel: 53456456456</a>
+                                </li>
+
+                                <li class="nav-item">
+
+                                    <a href="#" class="nav-link">(Hunting line)</a>
+                                </li>
+
+
+                            </ul>
+                        </nav>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="row">
+                    <div class="col-md-12 col-4 textt">
+                        <h4> Download Now </h4>
+                    </div>
+
+
+                    <div class="col-md-12 col-3">
+                        <div class="download">
+                            <a href="#"> <img src="{% static 'images/android.png' %}" class="d-block" alt="android"></a>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12 col-2">
+                        <div class="download">
+                            <a href="#"> <img src="{% static 'images/app.png' %}" class="d-block" alt="android"></a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+    <div class="last"></div>
+
+    <div class="linee">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h6 id="yeart"> &copy; </h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+<script src="{% static 'OwlCarousel2-2.3.4/dist/owl.carousel.min.js' %}"></script>
+<script src="{% static 'OwlCarousel2-2.3.4/dist/owl.carousel.js' %}"></script>
+<script src="{% static 'Javascript/javascriptt.js' %}"></script>
+
+<script src="{% static 'Javascript/java.js' %}"></script>
+
+</html>
+
