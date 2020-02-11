@@ -9,7 +9,7 @@ class ProductAdmin(admin.ModelAdmin):
 
 
 class SingleProduct(admin.ModelAdmin):
-    list_display = ('description','title_img','img1','img2','img3','img4','product')
+    list_display = ('description','title_img','img1','img2','img3','img4','product','AvailableSeats')
 
 
 

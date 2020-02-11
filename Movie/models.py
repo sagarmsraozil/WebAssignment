@@ -24,6 +24,7 @@ class Product_info(models.Model):
     img2 = models.FileField(blank=True)
     img3 = models.FileField(blank=True)
     img4 = models.FileField(blank=True)
+    AvailableSeats=models.IntegerField()
     product = models.ForeignKey(Product, on_delete=models.CASCADE, default="")
 
 

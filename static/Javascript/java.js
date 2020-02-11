@@ -79,6 +79,7 @@ function priceView()
 {
     var quantity=parseInt(document.getElementById("no").value);
     var type=document.querySelector("#type").value;
+    alert(type);
     if(type=="2D")
     {
         document.getElementById("price").value=quantity*300;
