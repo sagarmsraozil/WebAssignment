@@ -22,7 +22,7 @@ def register(request):
         pw=request.POST['password']
         user=User.objects.create_user(first_name=fn, last_name=ln,email=em,username=un,password=pw)
         user.save()
-        return redirect("/Home/login")
+        return redirect("/login")
     return render(request,"Website/register.html")
 
 
@@ -37,17 +37,11 @@ def login(request):
             if 'next' in request.POST:
                 return redirect(request.POST.get('next'))
             else:
-                return redirect('/Home')
+                return redirect('/')
         else:
             return HttpResponse("False")
     return render(request, "Website/login.html")
 
-
-
-
-
-
-
 def logout(request):
     auth.logout(request)
-    return redirect('/Home/login')
+    return redirect('/login')

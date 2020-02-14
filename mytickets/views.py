@@ -1,12 +1,12 @@
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 from Movie.models import MovieBook, Product_info
 
 
-@login_required(login_url='/Home/login')
+@login_required(login_url='/login')
 
 def show(request):
     if request.method=="POST":
@@ -32,14 +32,13 @@ def show(request):
             obj1.save()
             obj.save()
 
-    tickets=MovieBook.objects.filter(username=request.user)
+    tickets=MovieBook.objects.filter(username=request.user).order_by('ExpiryDate')
     return render(request,"Website/mytickets.html",{"ticket":tickets})
 
 def delete(request,pid):
     obj=MovieBook.objects.get(id=pid)
     obj.delete()
-    tickets=MovieBook.objects.filter(username=request.user)
-    return render(request,"Website/mytickets.html",{"ticket":tickets})
+    return redirect('/mytickets')
 
 
 

@@ -45,7 +45,7 @@
                                 <div class="collapse navbar-collapse" id="collapsible">
                                     <ul class="navbar-nav">
                                         <li class="nav-item">
-                                            <a href="/Home" class="nav-link"> Home </a>
+                                            <a href="/" class="nav-link"> Home </a>
                                         </li>
 
                                         <li class="nav-item">
@@ -55,6 +55,7 @@
                                         <li class="nav-item">
                                             <a href="/mytickets" class="nav-link"> My Tickets </a>
                                         </li>
+
 
                                         <li class="nav-item">
                                             <a href="/About" class="nav-link"> About Us </a>
@@ -76,17 +77,17 @@
                         <ul class="navbar-nav">
 
                             {% if user.is_authenticated %}
-                            {{ request.user }}
+                            <li class="nav-item">{{ request.user }}</li>
                             <li class="nav-item">
-                                <a href="/Home/logout" class="nav-link"> Logout</a>
+                                <a href="/logout" class="nav-link"> Logout</a>
                             </li>
                             {% else %}
                             <li class="nav-item">
-                                <a href="/Home/register" class="nav-link"> Sign Up </a>
+                                <a href="/register" class="nav-link"> Sign Up </a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="/Home/login" class="nav-link"> Login</a>
+                                <a href="/login" class="nav-link"> Login</a>
                             </li>
                             {% endif %}
 

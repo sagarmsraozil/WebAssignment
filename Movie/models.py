@@ -5,8 +5,6 @@ from django.db import models
 
 
 # Create your models here.
-from django.utils import timezone
-
 
 
 class Product(models.Model):
@@ -15,7 +13,6 @@ class Product(models.Model):
 
     def __str__(self):
         return self.movie_name
-
 
 class Product_info(models.Model):
     description = models.TextField()
@@ -26,7 +23,6 @@ class Product_info(models.Model):
     img4 = models.FileField(blank=True)
     AvailableSeats=models.IntegerField()
     product = models.ForeignKey(Product, on_delete=models.CASCADE, default="")
-
 
 class MovieBook(models.Model):
     movie_name = models.ForeignKey(Product, on_delete=models.CASCADE)
